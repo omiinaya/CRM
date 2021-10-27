@@ -5,6 +5,7 @@ import './App.css';
 
 //components
 import Home from './components/Home'
+import Test from './components/Test'
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/test" component={Test} />
           </Switch>
         </Router>
       </div>

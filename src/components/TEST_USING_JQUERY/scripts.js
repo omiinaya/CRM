@@ -86,10 +86,6 @@ export function reset() {
     }
 }
 
-export function testing() {
-    console.log('working as intended.')
-}
-
 $(function () {
     // initialization
     $('#main').w2layout(config.layout);
@@ -98,3 +94,7 @@ $(function () {
     // in memory initialization
     $().w2grid(config.grid2);
 });
+
+export function testing() {
+    console.log('working as intended.')
+}
