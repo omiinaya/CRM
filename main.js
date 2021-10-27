@@ -1,4 +1,8 @@
 require('v8-compile-cache')
+require("update-electron-app")({
+  repo: "omiinaya/b3",
+  updateInterval: "1 hour"
+});
 
 const electron = require("electron");
 const app = electron.app;
@@ -8,11 +12,6 @@ const path = require("path");
 const isDev = require("electron-is-dev");
 
 let mainWindow;
-
-require("update-electron-app")({
-  repo: "omiinaya/b3",
-  updateInterval: "1 hour"
-});
 
 function createWindow() {
   mainWindow = new BrowserWindow({ width: 900, height: 680, webPreferences: { nodeIntegration: true }});
