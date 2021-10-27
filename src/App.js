@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Home from './components/Home'
 import Grid from './components/Grid'
+import JQuery from './components/TEST_USING_JQUERY'
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,6 +21,7 @@ class App extends Component {
         </p>
         <Home />
         <Grid />
+        <JQuery />
       </div>
     );
   }

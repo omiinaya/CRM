@@ -6692,7 +6692,7 @@ jest@24.9.0:
     import-local "^2.0.0"
     jest-cli "^24.9.0"
 
-jquery@^3.6.0:
+jquery@>=3.5.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
@@ -11349,6 +11349,13 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+
+w2ui@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/w2ui/-/w2ui-1.5.3.tgz#78c4eb016ff1ccafbfb02413d13dc8e9e77bb915"
+  integrity sha512-K9rfBzadea3Bwh3QjMEh5WQZzqgDRxe1YI2GDLXnK7A5XaqR6tIhBj8/H7VzT+KKW2D+2s1BFk8xMDCzFBopsA==
+  dependencies:
+    jquery ">=3.5.0"
 
 w3c-hr-time@^1.0.1:
   version "1.0.2"

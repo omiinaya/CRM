@@ -8,11 +8,11 @@
     "cross-env": "6.0.2",
     "electron-is-dev": "1.1.0",
     "electron-log": "^3.0.8",
-    "jquery": "^3.6.0",
     "once": "^1.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "update-electron-app": "^1.2.0"
+    "update-electron-app": "^1.2.0",
+    "w2ui": "^1.5.3"
   },
   "devDependencies": {
     "concurrently": "4.1.2",
