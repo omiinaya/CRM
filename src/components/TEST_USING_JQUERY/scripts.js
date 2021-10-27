@@ -15,8 +15,8 @@ var config = {
         nodes: [
             {
                 id: 'general', text: 'General', group: true, expanded: true, nodes: [
-                    { id: 'grid1', text: 'Grid 1', icon: 'fa fa-pencil-square-o', selected: true },
-                    { id: 'grid2', text: 'Grid 2', icon: 'fa fa-pencil-square-o' },
+                    { id: 'grid1', text: 'Grid 1', icon: 'fa fa-list-alt', selected: true },
+                    { id: 'grid2', text: 'Grid 2', icon: 'fa fa-list-alt' },
                     { id: 'html', text: 'Some HTML', icon: 'fa fa-list-alt' }
                 ]
             }
