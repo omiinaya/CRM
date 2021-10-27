@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Home from './components/Home'
+import Grid from './components/Grid'
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,6 +18,8 @@ class App extends Component {
           <b> Release 0.2.7 </b>
           Version: {app.getVersion()}
         </p>
+        <Home />
+        <Grid />
       </div>
     );
   }
