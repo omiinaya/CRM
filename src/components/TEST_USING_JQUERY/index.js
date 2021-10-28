@@ -1,8 +1,13 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useHistory } from "react-router";
 import { reset, testing } from './scripts'
 
 function JQuery() {
+    //componentDidMount
+    useEffect(() => {
+        testing() 
+    }, []);
+
     const history = useHistory();
     return (
         <div>
