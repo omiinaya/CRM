@@ -137,7 +137,12 @@ export default function MiniDrawer(props) {
                     {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                {
+                                    index === 0 ? <InboxIcon /> :
+                                        index === 1 ? <MailIcon /> :
+                                            index === 2 ? <InboxIcon /> :
+                                                <MailIcon />
+                                }
                             </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
@@ -145,10 +150,15 @@ export default function MiniDrawer(props) {
                 </List>
                 <Divider />
                 <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    {['My Account', 'Logout', 'Test'].map((text, index) => (
                         <ListItem button key={text}>
+                            {index}
                             <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                {
+                                    index === 0 ? <InboxIcon /> :
+                                        index === 1 ? <MailIcon /> :
+                                            <MailIcon />
+                                }
                             </ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>
@@ -157,7 +167,7 @@ export default function MiniDrawer(props) {
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1 }}>
                 <DrawerHeader />
-                    {props.content}
+                {props.content}
             </Box>
         </Box>
     );
