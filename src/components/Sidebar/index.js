@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -19,6 +20,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import ComputerIcon from '@mui/icons-material/Computer';
 import PeopleIcon from '@mui/icons-material/People';
+import HomeIcon from '@mui/icons-material/Home';
 
 const drawerWidth = 180;
 
@@ -88,9 +90,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function MiniDrawer(props) {
-    console.log(props)
+    const history = useHistory()
+    const path = history.location.pathname
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    console.log(history.location.pathname)
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -121,7 +125,7 @@ export default function MiniDrawer(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Should be title of current tab.
+                        { path === '/' ? 'Home' : path.substring(1, path.length) }
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -136,18 +140,21 @@ export default function MiniDrawer(props) {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Systems', 'Clients', 'Parts'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {
-                                    index === 0 ? <ComputerIcon /> :
-                                        index === 1 ? <PeopleIcon /> :
-                                            index === 2 ? <InboxIcon /> :
-                                                <MailIcon />
-                                }
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
+                    {['Home', 'Systems', 'Clients', 'Parts'].map((text, index) => (
+                        <Link to={text} color="inherit" style={{color: 'black', textDecoration: "none"}}>
+                            <ListItem button key={text}>
+                                <ListItemIcon>
+                                    {
+                                        text === 'Home' ? <HomeIcon /> :
+                                            text === 'Systems' ? <ComputerIcon /> :
+                                                text === 'Clients' ? <PeopleIcon /> :
+                                                    text === 'Parts' ? <InboxIcon /> :
+                                                        <HomeIcon />
+                                    }
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        </Link>
                     ))}
                 </List>
                 <Divider />

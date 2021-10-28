@@ -5,6 +5,9 @@ import './App.css';
 
 //components
 import Home from './components/Home'
+import Systems from './components/Systems'
+import Clients from './components/Clients'
+import Parts from './components/Parts'
 
 class App extends Component {
   render() {
@@ -13,6 +16,10 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/Home" component={Home} />
+            <Route exact path="/Systems" component={Systems} />
+            <Route exact path="/Clients" component={Clients} />
+            <Route exact path="/Parts" component={Parts} />
           </Switch>
         </Router>
       </div>
