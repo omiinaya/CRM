@@ -64,7 +64,6 @@ var config = {
 
 export function reset() {
     for (let key in w2ui) {
-        console.log(key, w2ui[key]);
         w2ui[key].destroy();
     }
 }

@@ -16,14 +16,13 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import ComputerIcon from '@mui/icons-material/Computer';
 import PeopleIcon from '@mui/icons-material/People';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ExtensionIcon from '@mui/icons-material/Extension';
+import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 
 const drawerWidth = 180;
 
@@ -143,7 +142,7 @@ export default function MiniDrawer(props) {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Home', 'Systems', 'Clients', 'Parts'].map((text, index) => (
+                    {['Home', 'Systems', 'Clients', 'Parts', 'Tickets'].map((text, index) => (
                         <Link to={text} color="inherit" style={{ color: 'black', textDecoration: "none" }}>
                             <ListItem button key={text}>
                                 <ListItemIcon>
@@ -152,7 +151,8 @@ export default function MiniDrawer(props) {
                                             text === 'Systems' ? <ComputerIcon /> :
                                                 text === 'Clients' ? <PeopleIcon /> :
                                                     text === 'Parts' ? <ExtensionIcon /> :
-                                                        <HomeIcon />
+                                                        text === 'Tickets' ? <ConfirmationNumberIcon /> :
+                                                            <HomeIcon />
                                     }
                                 </ListItemIcon>
                                 <ListItemText primary={text} />

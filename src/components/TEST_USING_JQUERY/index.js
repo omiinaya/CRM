@@ -11,8 +11,6 @@ function JQuery() {
     //const history = useHistory();
     return (
         <div>
-            <script src="./scripts.js"></script>
-            
             <div id="main" style={{width:'100%', height:'200px'}}></div>
             <button onClick={()=> { gridStart() }}>Reload</button>
             <button onClick={()=> { reset() }}>Reset</button>
