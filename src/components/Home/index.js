@@ -4,6 +4,7 @@ import logo from './logo.svg';
 
 //components
 import Grid from '../Grid'
+import Sidebar from '../Sidebar'
 import JQuery from '../TEST_USING_JQUERY'
 
 const {app} = window.require('electron').remote;
@@ -19,6 +20,7 @@ function Home() {
                 <b> Release 0.2.7 </b>
                 Version: {app.getVersion()}
             </p>
+            <Sidebar />
             <Grid />
             <JQuery />
         </div>

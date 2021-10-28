@@ -6,7 +6,7 @@ var config = {
         name: 'layout',
         padding: 0,
         panels: [
-            { type: 'left', size: 200, resizable: true, minSize: 120 },
+            //{ type: 'left', size: 200, resizable: true, minSize: 120 },
             { type: 'main', minSize: 550, overflow: 'hidden' }
         ]
     },
@@ -67,18 +67,11 @@ export function reset() {
         console.log(key, w2ui[key]);
         w2ui[key].destroy();
     }
+    console.log('reset')
 }
 
-$(function () {
-    // initialization
+export function gridStart() {
+    reset()
     $('#main').w2layout(config.layout);
-    w2ui.layout.html('left', $().w2sidebar(config.sidebar));
     w2ui.layout.html('main', $().w2grid(config.grid1));
-    // in memory initialization
-    $().w2grid(config.grid2);
-    //reset()
-});
-
-export function testing() {
-    console.log('working as intended.')
 }
