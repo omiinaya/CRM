@@ -17,6 +17,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import ComputerIcon from '@mui/icons-material/Computer';
+import PeopleIcon from '@mui/icons-material/People';
 
 const drawerWidth = 180;
 
@@ -134,12 +136,12 @@ export default function MiniDrawer(props) {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    {['Systems', 'Clients', 'Parts'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
                                 {
-                                    index === 0 ? <InboxIcon /> :
-                                        index === 1 ? <MailIcon /> :
+                                    index === 0 ? <ComputerIcon /> :
+                                        index === 1 ? <PeopleIcon /> :
                                             index === 2 ? <InboxIcon /> :
                                                 <MailIcon />
                                 }
@@ -152,7 +154,6 @@ export default function MiniDrawer(props) {
                 <List>
                     {['My Account', 'Logout', 'Test'].map((text, index) => (
                         <ListItem button key={text}>
-                            {index}
                             <ListItemIcon>
                                 {
                                     index === 0 ? <InboxIcon /> :
