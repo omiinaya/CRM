@@ -63,26 +63,9 @@ var config = {
 };
 
 export function reset() {
-    if (w2ui['grid1']) {
-        w2ui['grid1'].destroy();
-    }
-    if (w2ui['grid1_toolbar']) {
-        w2ui['grid1_toolbar'].destroy();
-    }
-    if (w2ui['grid2']) {
-        w2ui['grid2'].destroy();
-    }
-    if (w2ui['layout']) {
-        w2ui['layout'].destroy();
-    }
-    if (w2ui['sidebar']) {
-        w2ui['sidebar'].destroy();
-    }
-    if (w2ui['form']) {
-        w2ui['form'].destroy();
-    }
-    if (w2ui['sidebar']) {
-        w2ui['sidebar'].destroy();
+    for (let key in w2ui) {
+        console.log(key, w2ui[key]);
+        w2ui[key].destroy();
     }
 }
 
@@ -93,6 +76,7 @@ $(function () {
     w2ui.layout.html('main', $().w2grid(config.grid1));
     // in memory initialization
     $().w2grid(config.grid2);
+    //reset()
 });
 
 export function testing() {
