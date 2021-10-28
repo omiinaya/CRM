@@ -1,11 +1,24 @@
+//dependencies
 import React from "react";
 
-function Default() {
+//components
+import Grid from '../Grid'
+import Sidebar from '../Sidebar'
+import Default from '../Default'
+import JQuery from '../TEST_USING_JQUERY'
+
+function Home() {
     return (
         <div>
-           Parts
+            <Sidebar content={
+                <div>
+                    <Default />
+                    <Grid />
+                    <JQuery />
+                </div>
+            } />
         </div>
     )
 }
 
-export default Default
+export default Home;

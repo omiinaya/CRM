@@ -67,7 +67,6 @@ export function reset() {
         console.log(key, w2ui[key]);
         w2ui[key].destroy();
     }
-    console.log('reset')
 }
 
 export function gridStart() {

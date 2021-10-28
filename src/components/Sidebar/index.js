@@ -21,6 +21,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import ComputerIcon from '@mui/icons-material/Computer';
 import PeopleIcon from '@mui/icons-material/People';
 import HomeIcon from '@mui/icons-material/Home';
+import SettingsIcon from '@mui/icons-material/Settings';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ExtensionIcon from '@mui/icons-material/Extension';
 
 const drawerWidth = 180;
 
@@ -125,7 +128,7 @@ export default function MiniDrawer(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        { path === '/' ? 'Home' : path.substring(1, path.length) }
+                        {path === '/' ? 'Home' : path.substring(1, path.length)}
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -141,14 +144,14 @@ export default function MiniDrawer(props) {
                 <Divider />
                 <List>
                     {['Home', 'Systems', 'Clients', 'Parts'].map((text, index) => (
-                        <Link to={text} color="inherit" style={{color: 'black', textDecoration: "none"}}>
+                        <Link to={text} color="inherit" style={{ color: 'black', textDecoration: "none" }}>
                             <ListItem button key={text}>
                                 <ListItemIcon>
                                     {
                                         text === 'Home' ? <HomeIcon /> :
                                             text === 'Systems' ? <ComputerIcon /> :
                                                 text === 'Clients' ? <PeopleIcon /> :
-                                                    text === 'Parts' ? <InboxIcon /> :
+                                                    text === 'Parts' ? <ExtensionIcon /> :
                                                         <HomeIcon />
                                     }
                                 </ListItemIcon>
@@ -159,13 +162,14 @@ export default function MiniDrawer(props) {
                 </List>
                 <Divider />
                 <List>
-                    {['My Account', 'Logout', 'Test'].map((text, index) => (
+                    {['My Account', 'Settings', 'Logout'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
                                 {
-                                    index === 0 ? <InboxIcon /> :
-                                        index === 1 ? <MailIcon /> :
-                                            <MailIcon />
+                                    text === 'My Account' ? <AccountCircleIcon /> :
+                                        text === 'Settings' ? <SettingsIcon /> :
+                                            text === 'Logout' ? <PeopleIcon /> :
+                                                <HomeIcon />
                                 }
                             </ListItemIcon>
                             <ListItemText primary={text} />
