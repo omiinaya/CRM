@@ -23,6 +23,9 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ExtensionIcon from '@mui/icons-material/Extension';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import HealingIcon from '@mui/icons-material/Healing';
+import BuildIcon from '@mui/icons-material/Build';
+import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 
 const drawerWidth = 180;
 
@@ -94,7 +97,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 export default function MiniDrawer(props) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(props.state);
-    console.log(window.location.pathname)
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -146,13 +148,13 @@ export default function MiniDrawer(props) {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Home', 'Systems', 'Clients', 'Parts', 'Tickets'].map((text, index) => (
-                        <Link 
-                        to={text} 
-                        color="inherit" 
-                        style={{ color: 'black', textDecoration: "none" }} 
-                        key={index}
-                        onClick={handleTabSwitch}
+                    {['Home', 'Systems', 'Clients', 'Parts'].map((text, index) => (
+                        <Link
+                            to={text}
+                            color="inherit"
+                            style={{ color: 'black', textDecoration: "none" }}
+                            key={index}
+                            onClick={handleTabSwitch}
                         >
                             <ListItem button key={text}>
                                 <ListItemIcon>
@@ -172,14 +174,36 @@ export default function MiniDrawer(props) {
                 </List>
                 <Divider />
                 <List>
-                    {['My Account', 'Settings', 'Logout'].map((text, index) => (
+                    {['Assembly', 'Integration', 'Depo'].map((text, index) => (
+                        <Link
+                            to={text}
+                            color="inherit"
+                            style={{ color: 'black', textDecoration: "none" }}
+                            key={index}
+                            onClick={handleTabSwitch}
+                        >
+                            <ListItem button key={text}>
+                                <ListItemIcon>
+                                    {
+                                        text === 'Assembly' ? <BuildIcon /> :
+                                            text === 'Integration' ? <AddToQueueIcon /> :
+                                                text === 'Depo' ? <HealingIcon /> :
+                                                    <HomeIcon />
+                                    }
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        </Link>
+                    ))}
+                </List>
+                <Divider />
+                <List>
+                    {['Settings'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>
                                 {
-                                    text === 'My Account' ? <AccountCircleIcon /> :
-                                        text === 'Settings' ? <SettingsIcon /> :
-                                            text === 'Logout' ? <PeopleIcon /> :
-                                                <HomeIcon />
+                                    text === 'Settings' ? <SettingsIcon /> :
+                                        <HomeIcon />
                                 }
                             </ListItemIcon>
                             <ListItemText primary={text} />

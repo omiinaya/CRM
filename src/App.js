@@ -23,14 +23,10 @@ class App extends Component {
 
   handleDrawer() {
     this.setState({ drawer: !this.state.drawer })
-    console.log('works')
-    console.log(this.state.drawer)
-    console.log(this.state.path)
   }
 
   handlePath() {
     this.setState({ path: window.location.pathname })
-    console.log('test')
   }
 
   render() {
