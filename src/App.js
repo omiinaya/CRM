@@ -23,12 +23,13 @@ class App extends Component {
     this.setState({ drawer: !this.state.drawer })
     console.log('works')
     console.log(this.state.drawer)
+    console.log(window.location.pathname)
   }
 
   render() {
     return (
       <Router>
-        <Sidebar state={this.state.drawer} fn={() => { this.handleDrawer() }} content={
+        <Sidebar title={window.location.pathname} state={this.state.drawer} fn={() => { this.handleDrawer() }} content={
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/Home" component={Home} />

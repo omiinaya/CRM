@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -92,11 +92,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function MiniDrawer(props) {
-    const history = useHistory()
-    const path = history.location.pathname
     const theme = useTheme();
     const [open, setOpen] = React.useState(props.state);
-    console.log(history.location.pathname)
+    console.log(window.location.pathname)
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -128,7 +126,7 @@ export default function MiniDrawer(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        {path === '/' ? 'Home' : path.substring(1, path.length)}
+                        {props.title === '/' ? 'Home' : props.title.substring(1, props.title.length)}
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -144,7 +142,7 @@ export default function MiniDrawer(props) {
                 <Divider />
                 <List>
                     {['Home', 'Systems', 'Clients', 'Parts', 'Tickets'].map((text, index) => (
-                        <Link to={text} color="inherit" style={{ color: 'black', textDecoration: "none" }}>
+                        <Link to={text} color="inherit" style={{ color: 'black', textDecoration: "none" }} key={index}>
                             <ListItem button key={text}>
                                 <ListItemIcon>
                                     {
