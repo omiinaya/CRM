@@ -95,11 +95,12 @@ export default function MiniDrawer(props) {
     const history = useHistory()
     const path = history.location.pathname
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(props.state);
     console.log(history.location.pathname)
 
     const handleDrawerOpen = () => {
         setOpen(true);
+        props.fn()
     };
 
     const handleDrawerClose = () => {
