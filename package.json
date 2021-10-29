@@ -9,7 +9,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && yarn start",
     "install": "cd client && yarn install",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\"",
     "build": "cd client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run start:prod || npm run start:dev",

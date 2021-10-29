@@ -26,6 +26,7 @@ import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import HealingIcon from '@mui/icons-material/Healing';
 import BuildIcon from '@mui/icons-material/Build';
 import AddToQueueIcon from '@mui/icons-material/AddToQueue';
+import HelpIcon from '@mui/icons-material/Help';
 
 const drawerWidth = 180;
 
@@ -148,7 +149,7 @@ export default function MiniDrawer(props) {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Home', 'Systems', 'Clients', 'Parts'].map((text, index) => (
+                    {['Home', 'Systems', 'Clients', 'Parts', 'Test'].map((text, index) => (
                         <Link
                             to={text}
                             color="inherit"
@@ -164,7 +165,8 @@ export default function MiniDrawer(props) {
                                                 text === 'Clients' ? <PeopleIcon /> :
                                                     text === 'Parts' ? <ExtensionIcon /> :
                                                         text === 'Tickets' ? <ConfirmationNumberIcon /> :
-                                                            <HomeIcon />
+                                                            text === 'Test' ? <HelpIcon /> :
+                                                                <HomeIcon />
                                     }
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
