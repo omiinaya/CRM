@@ -9,12 +9,14 @@ import Home from './components/Home'
 import Systems from './components/Systems'
 import Clients from './components/Clients'
 import Parts from './components/Parts'
+import Tickets from './components/Tickets'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      drawer: false
+      drawer: false,
+      path: window.location.pathname
     };
     this.handleDrawer = this.handleDrawer.bind(this)
   }
@@ -23,19 +25,30 @@ class App extends Component {
     this.setState({ drawer: !this.state.drawer })
     console.log('works')
     console.log(this.state.drawer)
-    console.log(window.location.pathname)
+    console.log(this.state.path)
+  }
+
+  handlePath() {
+    this.setState({ path: window.location.pathname })
+    console.log('test')
   }
 
   render() {
     return (
       <Router>
-        <Sidebar title={window.location.pathname} state={this.state.drawer} fn={() => { this.handleDrawer() }} content={
+        <Sidebar 
+        title={window.location.pathname} 
+        state={this.state.drawer} 
+        fnState={() => { this.handleDrawer() }} 
+        fnPath={() => { this.handlePath() }} 
+        content={
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/Home" component={Home} />
             <Route exact path="/Systems" component={Systems} />
             <Route exact path="/Clients" component={Clients} />
             <Route exact path="/Parts" component={Parts} />
+            <Route exact path="/Tickets" component={Tickets} />
           </Switch>
         } />
       </Router>

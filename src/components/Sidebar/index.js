@@ -98,12 +98,17 @@ export default function MiniDrawer(props) {
 
     const handleDrawerOpen = () => {
         setOpen(true);
-        props.fn()
+        props.fnState()
     };
 
     const handleDrawerClose = () => {
         setOpen(false);
+        props.fnState()
     };
+
+    const handleTabSwitch = () => {
+        props.fnPath()
+    }
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -142,7 +147,13 @@ export default function MiniDrawer(props) {
                 <Divider />
                 <List>
                     {['Home', 'Systems', 'Clients', 'Parts', 'Tickets'].map((text, index) => (
-                        <Link to={text} color="inherit" style={{ color: 'black', textDecoration: "none" }} key={index}>
+                        <Link 
+                        to={text} 
+                        color="inherit" 
+                        style={{ color: 'black', textDecoration: "none" }} 
+                        key={index}
+                        onClick={handleTabSwitch}
+                        >
                             <ListItem button key={text}>
                                 <ListItemIcon>
                                     {
