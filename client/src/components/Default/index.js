@@ -1,6 +1,6 @@
 import React from "react";
 import logo from './logo.svg';
-const { app } = window.require('electron').remote;
+//const { app } = window.require('electron').remote;
 
 function Default() {
     return (
@@ -11,7 +11,6 @@ function Default() {
             </div>
             <p className="App-intro">
                 <b> Release 0.2.7 </b>
-                Version: {app.getVersion()}
             </p>
         </div>
     )

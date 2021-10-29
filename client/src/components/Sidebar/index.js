@@ -199,15 +199,23 @@ export default function MiniDrawer(props) {
                 <Divider />
                 <List>
                     {['Settings'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {
-                                    text === 'Settings' ? <SettingsIcon /> :
-                                        <HomeIcon />
-                                }
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
+                        <Link
+                            to={text}
+                            color="inherit"
+                            style={{ color: 'black', textDecoration: "none" }}
+                            key={index}
+                            onClick={handleTabSwitch}
+                        >
+                            <ListItem button key={text}>
+                                <ListItemIcon>
+                                    {
+                                        text === 'Settings' ? <SettingsIcon /> :
+                                            <HomeIcon />
+                                    }
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        </Link>
                     ))}
                 </List>
             </Drawer>
