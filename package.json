@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/omiinaya/b3"
   },
-  "author": "VP",
+  "author": "Omar",
   "license": "No-License",
   "dependencies": {
     "axios": "^0.21.4",
@@ -28,6 +28,7 @@
     "bootstrap": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "electron-builder": "^22.13.1",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
