@@ -13,14 +13,14 @@
     "build": "cd client && yarn build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "yarn start:prod || yarn start:dev",
-    "postinstall": "cd client/src && npm install"
+    "postinstall": "cd client/src && yarn install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/omiinaya/b3"
   },
   "author": "VP",
-  "license": "No license",
+  "license": "No-License",
   "dependencies": {
     "axios": "^0.21.4",
     "bcrypt": "^4.0.1",
