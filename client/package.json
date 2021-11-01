@@ -37,9 +37,13 @@
   "build": {
     "publish": {
       "provider": "github"
-    }
+    },
+    "files": [
+      "./build/**/*",
+      "./public/electron.js"
+    ]
   },
-  "main": "main.js",
+  "main": "./public/electron.js",
   "homepage": "./",
   "scripts": {
     "react-start": "react-scripts start",
@@ -50,6 +54,10 @@
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omiinaya/b3"
   },
   "browserslist": {
     "production": [
