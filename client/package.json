@@ -2,6 +2,7 @@
   "name": "crm-electron",
   "description": "React + Electron sitting in a tree",
   "author": "Omar",
+  "license": "No-License",
   "version": "0.2.7",
   "private": true,
   "dependencies": {
