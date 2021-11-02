@@ -14,7 +14,8 @@ import Parts from './components/Parts'
 import Tickets from './components/Tickets'
 
 //testing
-import Test from './components/MUIGrid'
+//import Test from './components/MUIGrid'
+import Test from './components/TEST_SOCIALS_AUTHENTICATION'
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +33,10 @@ class App extends Component {
 
   handlePath() {
     this.setState({ path: window.location.pathname })
+  }
+
+  handleAuthentication() {
+    console.log('Implement authentication')
   }
 
   render() {
