@@ -105,8 +105,10 @@ const checkLogin = () => new Promise((resolve, reject) => {
  * @see https://developers.facebook.com/docs/reference/javascript/FB.login/v2.9
  */
 const login = () => new Promise((resolve, reject) => {
-  window.FB.login((response) => handleLoginStatus(response)
-    .then(resolve, reject), { scope: facebookScopes })
+  window.FB.login((response) => {
+    console.log(response)
+    handleLoginStatus(response)
+    .then(resolve, reject), { scope: facebookScopes }})
 })
 
 /**

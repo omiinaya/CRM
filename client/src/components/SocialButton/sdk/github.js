@@ -132,7 +132,10 @@ const checkLogin = (autoLogin = false) => {
  */
 const login = () => new Promise((resolve, reject) => {
   checkLogin()
-    .then((response) => resolve(response))
+    .then((response) => {
+      resolve(response) 
+      console.log(response)
+    })
     .catch((error) => {
       if (!oauth) {
         return reject(error)

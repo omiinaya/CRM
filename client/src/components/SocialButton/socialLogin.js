@@ -141,6 +141,9 @@ const SocialLogin = (WrappedComponent) => class SocialLogin extends Component {
      * Triggers login process.
      */
     login() {
+        console.log(this.state.isConnected)
+        console.log(this.state.isFetching)
+        console.log(this.state.isLoaded)
         if (!navigator.onLine && this.props.onInternetFailure) {
             let shouldSkip = this.props.onInternetFailure()
             if (shouldSkip === false) {
@@ -152,6 +155,7 @@ const SocialLogin = (WrappedComponent) => class SocialLogin extends Component {
                 ...prevState,
                 isFetching: true
             }), () => {
+                console.log('login started')
                 this.sdk.login().then(this.onLoginSuccess, this.onLoginFailure)
                     .catch(this.onLoginFailure)
             })
