@@ -49,5 +49,5 @@ app.get('*', (req, res) => {
 //initialize express listener.
 app.listen(port, () => {
     console.log("Server is running on port: " + port + "!")
-    keepAwake("https://servantapp.herokuapp.com/");
+    keepAwake("https://b3crm.herokuapp.com/");
 })
