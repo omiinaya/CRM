@@ -1,6 +1,7 @@
 //dependencies
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import CssBaseline from '@mui/material/CssBaseline';
 import './App.css';
 
 //components
@@ -35,25 +36,28 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <Sidebar
-          title={window.location.pathname}
-          state={this.state.drawer}
-          fnState={() => { this.handleDrawer() }}
-          fnPath={() => { this.handlePath() }}
-          content={
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/Home" component={Home} />
-              <Route exact path="/Systems" component={Systems} />
-              <Route exact path="/Clients" component={Clients} />
-              <Route exact path="/Parts" component={Parts} />
-              <Route exact path="/Tickets" component={Tickets} />
-              <Route exact path="/Test" component={Test} />
-            </Switch>
-          } />
-        <FloatingButton />
-      </Router>
+      <React.Fragment>
+        <CssBaseline />
+        <Router>
+          <Sidebar
+            title={window.location.pathname}
+            state={this.state.drawer}
+            fnState={() => { this.handleDrawer() }}
+            fnPath={() => { this.handlePath() }}
+            content={
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/Home" component={Home} />
+                <Route exact path="/Systems" component={Systems} />
+                <Route exact path="/Clients" component={Clients} />
+                <Route exact path="/Parts" component={Parts} />
+                <Route exact path="/Tickets" component={Tickets} />
+                <Route exact path="/Test" component={Test} />
+              </Switch>
+            } />
+          <FloatingButton />
+        </Router>
+      </React.Fragment>
     );
   }
 }
