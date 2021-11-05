@@ -4,6 +4,7 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { Op } = require("sequelize");
+const connection = require("../database/connections");
 
 //import sequelize model
 const User = require("../models/User");
@@ -25,7 +26,7 @@ users.post('/register', (req, res) => {
     }
     User.findOne({
         where: {
-            [Op.or]: [{ username: req.body.username }, { email: req.body.username }], 
+            [Op.or]: [{ username: req.body.username }, { email: req.body.username }],
         }
     })
         .then(user => {
@@ -53,7 +54,7 @@ users.post('/register', (req, res) => {
 users.post('/login', (req, res) => {
     User.findOne({
         where: {
-            [Op.or]: [{ username: req.body.username }, { email: req.body.username }], 
+            [Op.or]: [{ username: req.body.username }, { email: req.body.username }],
         }
     })
         .then(user => {
@@ -83,8 +84,18 @@ users.get("/all", function (req, res) {
     });
 });
 
+users.get("/columns", function (req, res) {
+    connection.query("SELECT * FROM information_schema.columns WHERE table_schema = 'o3xj5pp7wnm0cm5b' AND table_name = 'Users'", function (err, data) {
+        var columns = []
+        data.forEach((column) => {
+            columns.push(column.COLUMN_NAME)
+        })
+        res.send(columns);
+    });
+});
+
 //find user by username
-users.get("/:username", function (req, res) {
+users.get("/byName/:username", function (req, res) {
     User.findOne({
         where: {
             username: req.params.username
