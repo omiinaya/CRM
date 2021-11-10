@@ -1,0 +1,21 @@
+//dependencies
+const express = require("express");
+const cors = require("cors");
+const connection = require("../database/connections");
+
+const Grids = express.Router();
+Grids.use(cors())
+
+Grids.get("/columns/users", function (req, res) {
+    connection.query("SELECT * FROM information_schema.columns WHERE table_schema = 'o3xj5pp7wnm0cm5b' AND table_name = 'Users'", function (err, data) {
+        var columns = []
+        data.forEach((column) => {
+            columns.push(column.COLUMN_NAME)
+        })
+        res.send(columns);
+    });
+});
+
+
+
+module.exports = Grids
