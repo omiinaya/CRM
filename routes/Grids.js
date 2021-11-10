@@ -7,8 +7,9 @@ const schema = process.env.DB_DATABASE
 const Grids = express.Router();
 Grids.use(cors())
 
+//returns column names for users table
 Grids.get("/columns/users", function (req, res) {
-    connection.query("SELECT * FROM information_schema.columns WHERE table_schema = 'o3xj5pp7wnm0cm5b' AND table_name = 'Users'", function (err, data) {
+    connection.query("SELECT * FROM information_schema.columns WHERE table_schema = '"+schema+"' AND table_name = 'Users'", function (err, data) {
         var columns = []
         data.forEach((column) => {
             columns.push(column.COLUMN_NAME)
